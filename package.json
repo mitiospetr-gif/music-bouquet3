@@ -1,0 +1,16 @@
+﻿{
+  "name": "music-bouquet",
+  "version": "1.0.0",
+  "description": "Digital flower bouquet cards with music links",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "^14.2.0",
+    "vercel": "^32.0.0"
+  }
+}
+

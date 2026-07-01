@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваш персональный подарок</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#1a1a2e">
+</head>
+<body class="gift-page dark-theme">
+    <div class="gift-container">
+        <div class="gift-card">
+            <div class="bouquet-wrapper">
+                <img id="bouquetImage" src="" alt="Цветочный букет" class="bouquet-image">
+                <div class="overlay"></div>
+            </div>
+            
+            <div class="gift-content">
+                <div class="greeting-header">
+                    <span class="heart-icon">💛</span>
+                    <h2 class="greeting-title">Для тебя...</h2>
+                </div>
+                
+                <p id="greetingText" class="greeting-text"></p>
+                
+                <h3 id="trackName" class="track-name"></h3>
+                
+                <div class="links-section">
+                    <a id="youtubeBtn" href="#" target="_blank" class="btn-platform youtube">
+                        <span class="platform-icon">▶️</span>
+                        Слушать на YouTube
+                    </a>
+                    <a id="yandexBtn" href="#" target="_blank" class="btn-platform yandex">
+                        <span class="platform-icon">💿</span>
+                        Слушать на Яндекс.Диск
+                    </a>
+                </div>
+                
+                <p id="authorText" class="author-text"></p>
+            </div>
+        </div>
+        
+        <div class="gift-footer">
+            <p>С любовью, <span class="signature">Music Bouquet</span> 🌸</p>
+            <a href="/" class="create-own">Создать свой подарок</a>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Load gift data on page load
+        document.addEventListener('DOMContentLoaded', loadGift);
+    </script>
+</body>
+</html>

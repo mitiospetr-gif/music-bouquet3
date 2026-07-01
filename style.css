@@ -1,0 +1,803 @@
+/* ===== CSS Variables ===== */
+:root {
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16213e;
+    --bg-card: #0f3460;
+    --text-primary: #e8e8e8;
+    --text-secondary: #b8b8b8;
+    --accent-gold: #e94560;
+    --accent-gold-light: #ff6b6b;
+    --border-color: #2a2a4e;
+    --input-bg: #1a1a2e;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --radius: 16px;
+    --transition: all 0.3s ease;
+}
+
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===== Header ===== */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+}
+
+.logo h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* ===== Form ===== */
+.bouquet-form {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--input-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23e94560' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+.form-group option {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* ===== Buttons ===== */
+.btn-generate {
+    width: 100%;
+    padding: 18px 32px;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+}
+
+.btn-generate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(233, 69, 96, 0.6);
+}
+
+.btn-generate:active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    font-size: 1.3rem;
+}
+
+/* ===== Result Section ===== */
+.result-section {
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.result-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--accent-gold-light);
+}
+
+.result-card > p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.link-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.gift-link-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 14px 16px;
+    background: var(--input-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-copy,
+.btn-open {
+    padding: 14px 20px;
+    border: 2px solid var(--accent-gold);
+    background: transparent;
+    border-radius: 12px;
+    color: var(--accent-gold);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.btn-copy:hover,
+.btn-open:hover {
+    background: var(--accent-gold);
+    color: white;
+}
+
+.btn-new {
+    padding: 14px 32px;
+    background: transparent;
+    border: 2px solid var(--text-secondary);
+    border-radius: 12px;
+    color: var(--text-secondary);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-new:hover {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+/* ===== Gift Page ===== */
+.gift-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.gift-container {
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.gift-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.bouquet-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.bouquet-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gift-card:hover .bouquet-image {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(26, 26, 46, 0.3) 0%, rgba(26, 26, 46, 0.7) 100%);
+}
+
+.gift-content {
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.greeting-header {
+    margin-bottom: 20px;
+}
+
+.heart-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.greeting-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-style: italic;
+    color: var(--accent-gold-light);
+    margin-bottom: 20px;
+}
+
+.greeting-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.track-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.links-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.btn-platform {
+    padding: 16px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 1rem;
+}
+
+.btn-platform.youtube {
+    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+}
+
+.btn-platform.youtube:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5);
+}
+
+.btn-platform.yandex {
+    background: linear-gradient(135deg, #fc3f1d 0%, #e63210 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(252, 63, 29, 0.3);
+}
+
+.btn-platform.yandex:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(252, 63, 29, 0.5);
+}
+
+.author-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.gift-footer {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.signature {
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+.create-own {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.create-own:hover {
+    color: var(--accent-gold-light);
+    text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+.footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .bouquet-form {
+        padding: 20px;
+    }
+    
+    .gift-content {
+        padding: 30px 20px;
+    }
+    
+    .greeting-title {
+        font-size: 2rem;
+    }
+    
+    .track-name {
+        font-size: 1.5rem;
+    }
+    
+    .bouquet-wrapper {
+        height: 400px;
+    }
+    
+    .link-container {
+        flex-direction: column;
+    }
+    
+    .gift-link-input {
+        width: 100%;
+    }
+}
+
+/* ===== Loading State ===== */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== Toast Notification ===== */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--accent-gold);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+```
+
+## 6. **app.js** (JavaScript логика)
+
+```javascript
+// ===== Utility Functions =====
+
+// Base64URL encode/decode (safe for URLs)
+function base64URLEncode(str) {
+    return btoa(encodeURIComponent(str))
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_')
+        .replace(/=/g, '');
+}
+
+function base64URLDecode(str) {
+    // Add padding if needed
+    const padding = '='.repeat((4 - str.length % 4) % 4);
+    const base64 = (str + padding)
+        .replace(/\-/g, '+')
+        .replace(/\_/g, '/');
+    return decodeURIComponent(atob(base64));
+}
+
+// Generate unique ID
+function generateId() {
+    return Math.random().toString(36).substring(2, 15) + 
+           Math.random().toString(36).substring(2, 15);
+}
+
+// Show toast notification
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => toast.classList.add('show'), 10);
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
+// ===== Form Handling =====
+
+const form = document.getElementById('bouquetForm');
+const resultSection = document.getElementById('resultSection');
+const giftLinkInput = document.getElementById('giftLink');
+const copyLinkBtn = document.getElementById('copyLink');
+const openLinkBtn = document.getElementById('openLink');
+const createNewBtn = document.getElementById('createNew');
+
+if (form) {
+    form.addEventListener('submit', handleFormSubmit);
+}
+
+if (copyLinkBtn) {
+    copyLinkBtn.addEventListener('click', copyLink);
+}
+
+if (openLinkBtn) {
+    openLinkBtn.addEventListener('click', openLink);
+}
+
+if (createNewBtn) {
+    createNewBtn.addEventListener('click', createNew);
+}
+
+async function handleFormSubmit(e) {
+    e.preventDefault();
+    
+    const formData = {
+        greetingText: document.getElementById('greetingText').value.trim(),
+        trackName: document.getElementById('trackName').value.trim(),
+        youtubeLink: document.getElementById('youtubeLink').value.trim(),
+        yandexLink: document.getElementById('yandexLink').value.trim(),
+        author: document.getElementById('author').value.trim(),
+        bouquetStyle: document.getElementById('bouquetStyle').value,
+        createdAt: new Date().toISOString()
+    };
+    
+    // Validate at least one link
+    if (!formData.youtubeLink && !formData.yandexLink) {
+        showToast('Добавьте хотя бы одну ссылку (YouTube или Яндекс.Диск)');
+        return;
+    }
+    
+    // Encode data to URL-safe string
+    const encodedData = base64URLEncode(JSON.stringify(formData));
+    
+    // Generate gift URL
+    const giftUrl = `${window.location.origin}/gift/${encodedData}`;
+    
+    // Show result section
+    giftLinkInput.value = giftUrl;
+    resultSection.style.display = 'block';
+    
+    // Scroll to result
+    resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    
+    showToast('Подарок создан!');
+}
+
+function copyLink() {
+    giftLinkInput.select();
+    giftLinkInput.setSelectionRange(0, 99999); // Mobile support
+    
+    try {
+        navigator.clipboard.writeText(giftLinkInput.value);
+        showToast('Ссылка скопирована!');
+    } catch (err) {
+        // Fallback for older browsers
+        document.execCommand('copy');
+        showToast('Ссылка скопирована!');
+    }
+}
+
+function openLink() {
+    window.open(giftLinkInput.value, '_blank');
+}
+
+function createNew() {
+    form.reset();
+    resultSection.style.display = 'none';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ===== Gift Page Loading =====
+
+async function loadGift() {
+    // Get encoded data from URL path
+    const pathParts = window.location.pathname.split('/');
+    const encodedData = pathParts[pathParts.length - 1];
+    
+    if (!encodedData || encodedData === 'gift.html') {
+        showError('Ссылка недействительна');
+        return;
+    }
+    
+    try {
+        const decodedData = base64URLDecode(encodedData);
+        const giftData = JSON.parse(decodedData);
+        
+        displayGift(giftData);
+    } catch (error) {
+        console.error('Error loading gift:', error);
+        showError('Не удалось загрузить подарок. Ссылка может быть повреждена.');
+    }
+}
+
+function displayGift(data) {
+    // Set document title
+    document.title = `🌸 ${data.trackName} - Music Bouquet`;
+    
+    // Set bouquet image
+    const bouquetImage = document.getElementById('bouquetImage');
+    if (bouquetImage) {
+        bouquetImage.src = `/public/images/bouquets/${data.bouquetStyle}.webp`;
+        bouquetImage.alt = data.trackName;
+    }
+    
+    // Set greeting text
+    const greetingTextEl = document.getElementById('greetingText');
+    if (greetingTextEl && data.greetingText) {
+        greetingTextEl.textContent = data.greetingText;
+    }
+    
+    // Set track name
+    const trackNameEl = document.getElementById('trackName');
+    if (trackNameEl) {
+        trackNameEl.textContent = data.trackName;
+    }
+    
+    // Set YouTube button
+    const youtubeBtn = document.getElementById('youtubeBtn');
+    if (youtubeBtn) {
+        if (data.youtubeLink) {
+            youtubeBtn.href = data.youtubeLink;
+            youtubeBtn.style.display = 'flex';
+        } else {
+            youtubeBtn.style.display = 'none';
+        }
+    }
+    
+    // Set Yandex Disk button
+    const yandexBtn = document.getElementById('yandexBtn');
+    if (yandexBtn) {
+        if (data.yandexLink) {
+            yandexBtn.href = data.yandexLink;
+            yandexBtn.style.display = 'flex';
+        } else {
+            yandexBtn.style.display = 'none';
+        }
+    }
+    
+    // Set author text
+    const authorTextEl = document.getElementById('authorText');
+    if (authorTextEl && data.author) {
+        authorTextEl.textContent = data.author;
+    } else if (authorTextEl) {
+        authorTextEl.style.display = 'none';
+    }
+}
+
+function showError(message) {
+    const container = document.querySelector('.gift-container');
+    if (container) {
+        container.innerHTML = `
+            <div class="result-card">
+                <h3>😔 Ошибка</h3>
+                <p>${message}</p>
+                <a href="/" class="btn-generate" style="display: inline-block; margin-top: 20px; text-decoration: none; padding: 14px 28px;">
+                    Создать новый подарок
+                </a>
+            </div>
+        `;
+    }
+}
+
+// ===== Image Preloading =====
+
+function preloadImages() {
+    const styles = ['classic1', 'classic2', 'romantic1', 'romantic2', 'elegant1', 'elegant2'];
+    styles.forEach(style => {
+        const img = new Image();
+        img.src = `/public/images/bouquets/${style}.webp`;
+    });
+}
+
+// Preload images on main page
+if (document.getElementById('bouquetForm')) {
+    window.addEventListener('load', preloadImages);
+}
+
+// ===== Service Worker for PWA (optional) =====
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        // You can add a service worker here for offline support
+        // navigator.serviceWorker.register('/sw.js');
+    });
+}
+
+// ===== Analytics (optional) =====
+
+function trackEvent(eventName, eventData = {}) {
+    // Add your analytics here (Google Analytics, Yandex Metrica, etc.)
+    console.log(`Event: ${eventName}`, eventData);
+}
+
+// Track form submission
+if (form) {
+    form.addEventListener('submit', () => {
+        trackEvent('gift_created');
+    });
+}
+
+// Track gift views
+if (document.querySelector('.gift-page')) {
+    trackEvent('gift_viewed', {
+        url: window.location.href
+    });
+}

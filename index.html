@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Bouquet - Создай подарок за минуту</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🌸</span>
+                <h1>Music Bouquet</h1>
+            </div>
+            <p class="subtitle">Создай подарок за минуту</p>
+        </header>
+
+        <main class="main">
+            <form id="bouquetForm" class="bouquet-form">
+                <div class="form-group">
+                    <label for="greetingText">Текст поздравления</label>
+                    <textarea 
+                        id="greetingText" 
+                        name="greetingText" 
+                        placeholder="Для тебя..." 
+                        rows="3"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="trackName">Название трека</label>
+                    <input 
+                        type="text" 
+                        id="trackName" 
+                        name="trackName" 
+                        placeholder="Например: Перегонка"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="youtubeLink">YouTube ссылка</label>
+                    <input 
+                        type="url" 
+                        id="youtubeLink" 
+                        name="youtubeLink" 
+                        placeholder="https://youtube.com/watch?v=..."
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="yandexLink">Яндекс Диск ссылка</label>
+                    <input 
+                        type="url" 
+                        id="yandexLink" 
+                        name="yandexLink" 
+                        placeholder="https://disk.yandex.ru/..."
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="author">Автор (необязательно)</label>
+                    <input 
+                        type="text" 
+                        id="author" 
+                        name="author" 
+                        placeholder="Lyrics Dmitry Churakov aka Milos"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="bouquetStyle">Стиль букета</label>
+                    <select id="bouquetStyle" name="bouquetStyle" required>
+                        <option value="classic1">Классический (розовый)</option>
+                        <option value="classic2">Классический (белый)</option>
+                        <option value="romantic1">Романтичный (пионы)</option>
+                        <option value="romantic2">Романтичный (розы)</option>
+                        <option value="elegant1">Элегантный (темный)</option>
+                        <option value="elegant2">Элегантный (пастель)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-generate">
+                    <span class="btn-icon">✨</span>
+                    Сгенерировать подарок
+                </button>
+            </form>
+
+            <div id="resultSection" class="result-section" style="display: none;">
+                <div class="result-card">
+                    <h3>Ваш подарок готов!</h3>
+                    <p>Скопируйте ссылку и отправьте близкому человеку:</p>
+                    <div class="link-container">
+                        <input type="text" id="giftLink" readonly class="gift-link-input">
+                        <button id="copyLink" class="btn-copy">
+                            <span>📋</span> Копировать
+                        </button>
+                        <button id="openLink" class="btn-open">
+                            <span>🔗</span> Открыть
+                        </button>
+                    </div>
+                    <button id="createNew" class="btn-new">
+                        Создать новый подарок
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>🌸 Music Bouquet — цифровые открытки с душой</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
