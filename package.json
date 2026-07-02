@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "Digital flower bouquet cards with music links",
   "scripts": {
-    "dev": "npx serve public",
-    "deploy": "vercel --prod"
+    "dev": "npx serve public"
   },
   "devDependencies": {
-    "serve": "^14.2.0",
-    "vercel": "^32.0.0"
+    "serve": "^14.2.0"
   }
 }
